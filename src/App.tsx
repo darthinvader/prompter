@@ -1,7 +1,5 @@
-import { useState } from "react";
+import Answers from "./components/Answers.jsx";
 
-function App() {
-  return <div></div>;
+export default function SearchBar() {
+  return <Answers />;
 }
-
-export default App;
