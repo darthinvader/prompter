@@ -9,7 +9,7 @@ export const describeWord = (word: string) => {
     .scrape(
       `https://describingwords.io/api/descriptors?term=sword&sortType=${word}`
     )
-    .then((res: string) =>
+    .then((res: { content: string }) =>
       console.log(
         JSON.parse(
           res.content
@@ -24,7 +24,7 @@ export const describeWord = (word: string) => {
 export const relatedWords = (word: string) => {
   client
     .scrape(`https://relatedwords.org/api/related?term=swords${word}`)
-    .then((res: string) =>
+    .then((res: { content: string }) =>
       console.log(
         JSON.parse(
           res.content
