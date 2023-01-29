@@ -8,8 +8,9 @@ const DescriptionsContext = React.createContext<DescriptionData | undefined>(
   []
 );
 
-const DescriptionsUpdateContext =
-  React.createContext<(description: string) => void>();
+const DescriptionsUpdateContext = React.createContext<
+  (description: string) => void
+>((description: string) => {});
 
 export const useDescriptions = () => React.useContext(DescriptionsContext);
 export const useDescriptionsUpdate = () =>
