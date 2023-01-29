@@ -8,9 +8,8 @@ const DescriptionsContext = React.createContext<DescriptionData | undefined>(
   []
 );
 
-const DescriptionsUpdateContext = React.createContext<
-  (description: string) => void
->((description: string) => {});
+const DescriptionsUpdateContext =
+  React.createContext<(description: string) => void>();
 
 export const useDescriptions = () => React.useContext(DescriptionsContext);
 export const useDescriptionsUpdate = () =>
@@ -19,9 +18,10 @@ export const useDescriptionsUpdate = () =>
 // Create a provider for the context
 const DescriptionsProvider = ({ children }: { children: React.ReactNode }) => {
   const [descriptions, setDescriptions] = React.useState<string[]>([]);
-  const addDescription = (description: string) =>
+  const addDescription = (description: string) => {
+    console.log("Activated Function");
     setDescriptions((descriptions) => [...descriptions, description]);
-
+  };
   return (
     <DescriptionsUpdateContext.Provider value={addDescription}>
       <DescriptionsContext.Provider value={descriptions}>
