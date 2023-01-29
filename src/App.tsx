@@ -1,6 +1,5 @@
-import SearchBar from "./components/SearchBar";
-import WordChip from "./components/WordChip";
+import CopyField from "./components/CopyField";
 
 export default function App() {
-  return <WordChip label="Chip" />;
+  return <CopyField />;
 }
