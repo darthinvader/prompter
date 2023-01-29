@@ -4,9 +4,9 @@ import * as React from "react";
 type DescriptionData = string[];
 
 // Create the context
-const DescriptionsContext = React.createContext<DescriptionData | undefined>([
-  "",
-]);
+const DescriptionsContext = React.createContext<DescriptionData | undefined>(
+  []
+);
 
 const DescriptionsUpdateContext = React.createContext<
   (description: string) => void
